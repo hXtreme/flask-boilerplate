@@ -12,7 +12,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # Setup the app with the config.py file
-app.config.from_object('app.config')
+app.config.from_object("app.config")
 
 # Setup the logger
 
@@ -23,8 +23,8 @@ db = SQLAlchemy(app)
 mail = Mail(app)
 
 # Setup the debug toolbar
-app.config['DEBUG_TB_TEMPLATE_EDITOR_ENABLED'] = True
-app.config['DEBUG_TB_PROFILER_ENABLED'] = True
+app.config["DEBUG_TB_TEMPLATE_EDITOR_ENABLED"] = True
+app.config["DEBUG_TB_PROFILER_ENABLED"] = True
 toolbar = DebugToolbarExtension(app)
 
 # Setup the password crypting
@@ -37,7 +37,7 @@ app.register_blueprint(user.userbp)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'userbp.signin'
+login_manager.login_view = "userbp.signin"
 
 
 @login_manager.user_loader
