@@ -1,14 +1,14 @@
+from flask_login import UserMixin
 from sqlalchemy.ext.hybrid import hybrid_property
-from flask.ext.login import UserMixin
 
-from app import db, bcrypt
+from app import bcrypt
+from app import db
 
 
 class User(db.Model, UserMixin):
+    """ A user who has an account on the website. """
 
-    ''' A user who has an account on the website. '''
-
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
 
     @property
     def full_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return "{} {}".format(self.first_name, self.last_name)
 
     @hybrid_property
     def password(self):
@@ -34,4 +34,3 @@ class User(db.Model, UserMixin):
 
     def get_id(self):
         return self.email
-
