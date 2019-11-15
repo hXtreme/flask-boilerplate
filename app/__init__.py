@@ -1,13 +1,16 @@
-from app import admin
-from app.models import User
-from flask_login import LoginManager
-from app.views import main, user, error
+from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
+from flask_login import LoginManager
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
+
+from app import admin
 from app.logger_setup import logger
-from flask import Flask
+from app.models import User
+from app.views import error
+from app.views import main
+from app.views import user
 
 app = Flask(__name__)
 
