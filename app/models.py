@@ -6,7 +6,6 @@ from app import db
 
 
 class User(db.Model, UserMixin):
-
     """ A user who has an account on the website. """
 
     __tablename__ = "users"
