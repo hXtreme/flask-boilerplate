@@ -68,7 +68,8 @@ def confirm(token):
     # Update the database with the user
     db.session.commit()
     # Send to the signin page
-    flash("Your email address has been confirmed, you can sign in.", "positive")
+    flash("Your email address has been confirmed, you can sign in.",
+          "positive")
     return redirect(url_for("userbp.signin"))
 
 

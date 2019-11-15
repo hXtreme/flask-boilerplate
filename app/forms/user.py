@@ -11,7 +11,6 @@ from app.models import User
 
 
 class Unique(object):
-
     """
     Custom validator to check an object's attribute
     is unique. For example users should not be able
@@ -33,14 +32,13 @@ class Unique(object):
 
 
 class Forgot(Form):
-
     """ User forgot password form. """
 
-    email = TextField(validators=[Required(), Email()], description="Email address")
+    email = TextField(validators=[Required(), Email()],
+                      description="Email address")
 
 
 class Reset(Form):
-
     """ User reset password form. """
 
     password = PasswordField(
@@ -55,22 +53,22 @@ class Reset(Form):
 
 
 class Login(Form):
-
     """ User login form. """
 
-    email = TextField(validators=[Required(), Email()], description="Email address")
+    email = TextField(validators=[Required(), Email()],
+                      description="Email address")
     password = PasswordField(validators=[Required()], description="Password")
 
 
 class SignUp(Form):
-
     """ User sign up form. """
 
-    first_name = TextField(validators=[Required(), Length(min=2)], description="Name")
-    last_name = TextField(validators=[Required(), Length(min=2)], description="Surname")
-    phone = TextField(
-        validators=[Required(), Length(min=6)], description="Phone number"
-    )
+    first_name = TextField(validators=[Required(), Length(min=2)],
+                           description="Name")
+    last_name = TextField(validators=[Required(), Length(min=2)],
+                          description="Surname")
+    phone = TextField(validators=[Required(), Length(min=6)],
+                      description="Phone number")
     email = TextField(
         validators=[
             Required(),
