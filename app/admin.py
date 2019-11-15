@@ -1,12 +1,14 @@
 import os.path as op
 
-from flask import request, Response
-from werkzeug.exceptions import HTTPException
+from flask import request
+from flask import Response
 from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 from flask_admin.contrib.fileadmin import FileAdmin
+from flask_admin.contrib.sqla import ModelView
+from werkzeug.exceptions import HTTPException
 
-from app import app, db
+from app import app
+from app import db
 from app.models import User
 
 
